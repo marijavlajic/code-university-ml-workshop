@@ -5,6 +5,7 @@ Go to https://www.anaconda.com/download and download Anaconda with Python 3.*
 In your terminal type:
 
 `conda create -n ml-workshop python==3.4 pandas numpy scikit-learn scipy matplotlib seaborn ipython jupyter`
+
 `source activate ml-workshop`
 
 Clone the workshop repository:
