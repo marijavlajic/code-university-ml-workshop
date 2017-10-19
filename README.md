@@ -13,6 +13,8 @@ If you have basic Python experience, curiosity, and excitement, you're ready to 
 * Hands on experimentation: 45 minutes
 * Wrap-up and questions: 15 minutes
 
+---
+
 ### Getting set up
 
 #### Installing and Configuring Python
@@ -20,13 +22,15 @@ If you have basic Python experience, curiosity, and excitement, you're ready to 
 
 #### Download Anaconda
 * Anaconda is a python distribution which includes pretty much everything you need for out-of-the-box data science work.
-* Download and install Anaconda (for a Python 3.* version) from (https://www.anaconda.com/download)[https://www.anaconda.com/download]
+* Download and install Anaconda (for a Python 3.* version) from [https://www.anaconda.com/download](https://www.anaconda.com/download)
 
 #### Getting the Extra Libraries
-* There are a few extra packages you'll need for this workshop. Run the line below to get everything set up:
+* There are a few extra packages you'll need for this workshop. Run the lines below to get everything set up:
 
 ```
 conda create -n ml-workshop python==3.4 pandas numpy scikit-learn scipy matplotlib seaborn ipython jupyter
+
+source activate ml-workshop
 ```
 
 #### Downloading the code
@@ -37,6 +41,8 @@ You can download the repository zip file or clone the repository.
 `jupyter notebook`
 * Then, open the `ML Workshop Part 1 - Data Exploration.ipynb` file.
 * That's all you need. You're ready to go learn more about Machine Learning.
+
+---
 
 ### Resources
 * [Iris Dataset - History/Info](https://en.wikipedia.org/wiki/Iris_flower_data_set)
