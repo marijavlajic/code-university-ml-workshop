@@ -5,7 +5,7 @@ from matplotlib.colors import ListedColormap
 import seaborn as sns
 
 def plot_setup():
-    mpl.rcParams['figure.figsize'] = 8, 8
+    mpl.rcParams['figure.figsize'] = 8, 6
     mpl.rcParams['axes.grid'] = False
     mpl.rcParams['axes.edgecolor'] = '0.3'
     mpl.rcParams['axes.linewidth'] = 1
