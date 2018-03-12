@@ -6,6 +6,7 @@ import seaborn as sns
 
 def plot_setup():
     mpl.rcParams['figure.figsize'] = 8, 6
+#    mpl.rcParams['axes.prop_cycle'] = '#144181', '#E43939', '#00819B', '#FF6500', '#712177', '#FDC400', '#8BA52C', '#2A906D',  '#8A1B70', '#00819B'
     mpl.rcParams['axes.grid'] = False
     mpl.rcParams['axes.edgecolor'] = '0.3'
     mpl.rcParams['axes.linewidth'] = 1
@@ -13,6 +14,8 @@ def plot_setup():
     mpl.rcParams['axes.labelsize'] = 20
     mpl.rcParams['axes.titlesize'] = 24
     mpl.rcParams['patch.edgecolor'] = 'none'
+    mpl.rcParams['grid.alpha'] = 0.0
+    mpl.rcParams['legend.fontsize'] = 16
     mpl.rcParams['xtick.major.size'] = 0
     mpl.rcParams['ytick.major.size'] = 0
     mpl.rcParams['xtick.labelsize'] = 18
