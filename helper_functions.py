@@ -3,6 +3,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import seaborn as sns
+from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
 def plot_setup():
     mpl.rcParams['figure.figsize'] = 8, 6
@@ -25,42 +26,28 @@ def plot_setup():
     mpl.rcParams['text.color'] = '0.3'
     sns.set_style('white')
     
-def plot_supervised_model(name, model, X_test, y_test, y_pred):
-    plot_setup()
-    cmap_light = ListedColormap(['#d5deb3', '#a3d1db', '#f5b8b8', '#ffc8a3', '#b792ba', '#aabad1', '#b2d7ca', '#ffe192'])
-    cmap_bold = ListedColormap(['#8ba52c', '#00819b', '#e43939'])
-    plt.figure(figsize=(8, 8))
-    plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, s=100, cmap=cmap_bold)
-    idx = np.where(y_pred != y_test)
-    plt.scatter(X_test[idx, 0], X_test[idx, 1], c=y_pred[idx], s=300, alpha=0.2, cmap=cmap_bold)
-    plt.xlabel('Sepal Length')
-    plt.ylabel('Sepal Width')
-    plt.title(name)
-    plt.show()
 
-def plot_unsupervised_model(name, model, X, y):
-    plot_setup()
-    cmap_light = ListedColormap(['#d5deb3', '#a3d1db', '#f5b8b8', '#ffc8a3', '#b792ba', '#aabad1', '#b2d7ca', '#ffe192'])
-    cmap_bold = ListedColormap(['#8ba52c', '#00819b', '#e43939'])
-    h = .02
-    X_sub = X[:, :2]
-    model.fit(X_sub, y)
-    centroids = model.cluster_centers_
-    x_min, x_max = X_sub[:, 0].min() - 1, X_sub[:, 0].max() + 1
-    y_min, y_max = X_sub[:, 1].min() - 1, X_sub[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                         np.arange(y_min, y_max, h))
-    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
-    plt.figure(figsize=(8, 8))
-    plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
-    plt.scatter(X_sub[:, 0], X_sub[:, 1], s=50, cmap=cmap_bold)
-    plt.scatter(centroids[:, 0], centroids[:, 1], 
-                marker='x', s=300, linewidths=5,
-                color='w', zorder=10)
-    plt.xlim(xx.min(), xx.max())
-    plt.ylim(yy.min(), yy.max())
-    plt.title(name)
-    plt.xlabel('Sepal Length', fontsize=20)
-    plt.ylabel('Sepal Width', fontsize=20)
-    plt.show()
+def plot_confusion_matrix(y_true, y_pred, cmap=plt.cm.Blues):
+    cm = confusion_matrix(y_true, y_pred)
+    cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+    prf = precision_recall_fscore_support(y_true, y_pred)
+    plt.imshow(cm_normalized, interpolation='nearest', cmap=cmap)
+#    for i in range(len(cm)):
+#        plt.text(len(cm)-0.3, i-0.1, str(int(prf[0][i]*100))+"%", 
+#                 fontsize=18, verticalalignment='center')
+#        plt.text(len(cm)-0.3, i+0.1, str(int(prf[1][i]*100))+"%", 
+#                 fontsize=18, verticalalignment='center')
+    tick_marks = np.arange(len(cm))
+    labels = ['did not survive', 'survived']
+    if len(cm) == 2:
+        labels = labels[0:]
+    plt.xticks(tick_marks, labels, rotation=45, fontsize=16)
+    plt.yticks(tick_marks, labels, fontsize=16)
+    plt.tight_layout()
+    plt.ylabel('True label', fontsize=18)
+    plt.xlabel('Predicted label', fontsize=18)
+    for i, row in enumerate(cm):
+        for j, val in enumerate(row):
+            plt.text(j, i, val, fontsize=30, 
+                    horizontalalignment='center',
+                    verticalalignment='center')
