@@ -33,6 +33,8 @@ conda create -n ml-workshop python==3.4 pandas numpy scikit-learn scipy matplotl
 source activate ml-workshop
 ```
 
+* If you have time to work on Part 6 - Decision Trees, you will also need the `graphviz` library. You can install this using: `pip install graphviz`.
+
 #### Downloading the code
 You can download the repository zip file or clone the repository.
 
