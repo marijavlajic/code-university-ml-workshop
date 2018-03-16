@@ -7,7 +7,6 @@ from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
 def plot_setup():
     mpl.rcParams['figure.figsize'] = 8, 6
-#    mpl.rcParams['axes.prop_cycle'] = '#144181', '#E43939', '#00819B', '#FF6500', '#712177', '#FDC400', '#8BA52C', '#2A906D',  '#8A1B70', '#00819B'
     mpl.rcParams['axes.grid'] = False
     mpl.rcParams['axes.edgecolor'] = '0.3'
     mpl.rcParams['axes.linewidth'] = 1
@@ -32,11 +31,6 @@ def plot_confusion_matrix(y_true, y_pred, cmap=plt.cm.Blues):
     cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     prf = precision_recall_fscore_support(y_true, y_pred)
     plt.imshow(cm_normalized, interpolation='nearest', cmap=cmap)
-#    for i in range(len(cm)):
-#        plt.text(len(cm)-0.3, i-0.1, str(int(prf[0][i]*100))+"%", 
-#                 fontsize=18, verticalalignment='center')
-#        plt.text(len(cm)-0.3, i+0.1, str(int(prf[1][i]*100))+"%", 
-#                 fontsize=18, verticalalignment='center')
     tick_marks = np.arange(len(cm))
     labels = ['did not survive', 'survived']
     if len(cm) == 2:
