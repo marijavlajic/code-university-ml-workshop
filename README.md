@@ -1,16 +1,16 @@
-***Ada Lovelace Festival - Intro to Machine Learning Workshop***
+***CODE University - Intro to Machine Learning Workshop***
 
 Machine Learning isn't a new concept, but it has gained a lot of notoriety in the past few years, particularly as the quantity of available data explodes and the processing power of computers drastically accelerates. You may be hearing the phrase all over the place. "Let's add some ML to this product." "This new feature is powered by Machine Learning." "We just need to get the ML working." The more you hear the phrase, the less it seems like you know what it means.
 
 The purpose of this workshop is to demystify the concept of ML. You will get a chance to learn about the idea as a whole, while also getting hands-on experience with some of the large topics in Machine Learning, such as Supervised Learning and Unsupervised Learning.
 
-You will be able to explore the Iris Dataset, build out your own Machine Learning models (after we teach you what that means), train and test your models, and analyze the results.
+You will be able to explore the Titanic Dataset, build out your own Machine Learning models (after we teach you what that means), train and test your models, and analyze the results.
 
 If you have basic Python experience, curiosity, and excitement, you're ready to get started and learn.
 
 ### Workshop structure
-* Presentation (Intro to ML): 30 minutes
-* Hands on experimentation: 45 minutes
+* Presentation (Intro to ML): 45 minutes
+* Hands on experimentation: 3 hours
 * Wrap-up and questions: 15 minutes
 
 ---
@@ -45,8 +45,9 @@ You can download the repository zip file or clone the repository.
 ---
 
 ### Resources
-* [Iris Dataset - History/Info](https://en.wikipedia.org/wiki/Iris_flower_data_set)
-* [Iris Dataset - SciKit Learn](http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
+* [RMS Titanic History](https://en.wikipedia.org/wiki/RMS_Titanic)
+* [Titanic Dataset - History/Info](http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html)
+* [Titanic Dataset/Competition - Kaggle](https://www.kaggle.com/c/titanic)
 
 ### More Info about the Libraries
 * Pandas - Provides data structures and data analysis tools
