@@ -8,11 +8,6 @@ You will be able to explore the Titanic Dataset, build out your own Machine Lear
 
 If you have basic Python experience, curiosity, and excitement, you're ready to get started and learn.
 
-### Workshop structure
-* Presentation (Intro to ML): 45 minutes
-* Hands on experimentation: 3 hours
-* Wrap-up and questions: 15 minutes
-
 ---
 
 ### Getting set up
@@ -32,11 +27,6 @@ conda create -n ml-workshop python==3.4 pandas numpy scikit-learn scipy matplotl
 
 source activate ml-workshop
 ```
-
-* If you have time to work on Part 6 - Decision Trees, you will also need the `graphviz` library. You can install this using: `pip install graphviz`.
-
-* If you get `No module named xyz found` errors when running your notebooks, it is possible that jupyter is using your local python environment and not the `ml-workshop` kernel (environment). Try running the following command to fix this: `python -m ipykernel install --name ml-workshop`
-
 
 #### Downloading the code
 You can download the repository zip file or clone the repository.
