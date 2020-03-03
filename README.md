@@ -23,9 +23,9 @@ If you have basic Python experience, curiosity, and excitement, you're ready to 
 * There are a few extra packages you'll need for this workshop. Run the lines below to get everything set up:
 
 ```
-conda create -n ml-workshop python==3.4 pandas numpy scikit-learn scipy matplotlib seaborn ipython jupyter
+conda create -n ml-workshop python==3.7 pandas numpy scikit-learn scipy matplotlib seaborn ipython jupyter
 
-source activate ml-workshop
+conda activate ml-workshop
 ```
 
 #### Downloading the code
